@@ -1,10 +1,14 @@
 class Offer:
 
     def __init__(self, link:str):
+        """
+        Function to initialize the offer.
+        """
         self.link = link
 
     def __eq__(self, other):
         """
+        Function to compare two offers.
         """
         return self.link == other.link
 
@@ -47,5 +51,6 @@ class Offer:
 
     def apply(self):
         """
+        Function to apply to the offer.
         """
         pass
