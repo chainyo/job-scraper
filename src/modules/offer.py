@@ -1,10 +1,17 @@
 class Offer:
 
-    def __init__(self, link:str):
+    def __init__(self, id_:str):
         """
         Function to initialize the offer.
+        
+        Parameters
+        ----------
+        id: str
+            Job id.
         """
-        self.link = link
+        self.id = id_
+        self.link = f'https://fr.indeed.com/voir-emploi?jk={self.id}'
+
 
     def __eq__(self, other):
         """
