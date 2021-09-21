@@ -1,0 +1,9 @@
+version: 3.8
+
+services:
+  # Standalone driver for Chrome for scraping
+  chrome-driver:
+    image: selenium/standalone-chrome:4.0.0-rc-2-prerelease-20210916
+    container_name: chrome-driver
+    ports:
+      - "4444:4444"
