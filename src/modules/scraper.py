@@ -1,10 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys 
 
+from src.modules.offer import Offer
 
 class Scraper:
 
-    def __init__(self, url:str, driver:webdriver, job:str, location:str):
+    def __init__(self, url:str, job:str, location:str, driver:webdriver):
         """
         """
         self.url = url
@@ -51,36 +52,3 @@ class Scraper:
             url = self.driver.current_url.split('start=')[0] + str(i)
             self.driver.get(url)
             print(len(self.offers))
-
-
-class Offer:
-
-    def __init__(self, link:str):
-        self.link = link
-
-    def __eq__(self, other):
-        """
-        """
-        return self.link == other.link
-
-    def infos(self):
-        """
-        """
-        pass
-
-    def apply(self):
-        """
-        """
-        pass
-
-try:
-    grid_url = "http://127.0.0.1:4444/wd/hub"
-    driver = webdriver.Remote(command_executor=grid_url)
-
-    scraper = Scraper(url="http://fr.indeed.com", driver=driver, job="intelligence artificielle", location="Lyon")
-    scraper.scrap()
-
-    # save screenshot
-    driver.save_screenshot("indeed.png")
-finally:
-    driver.quit()  
