@@ -6,7 +6,7 @@ try:
     grid_url = "http://127.0.0.1:4444/wd/hub"
     driver = webdriver.Remote(command_executor=grid_url)
 
-    scraper = Indeed(driver=driver, job="data", location="Lyon")
+    scraper = Indeed(driver=driver, job="data engineer", location="Lyon")
     scraper.scrap()
 
     # save screenshot
