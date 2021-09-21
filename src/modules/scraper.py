@@ -15,11 +15,13 @@ class Indeed:
 
     def access_page(self, url:str):
         """
+        Function to access the page.
         """
         self.driver.get(url)
 
     def save_offers(self):
         """
+        Function to save offers and append them to the list of all offers.
         """
         offers = self.driver.find_elements_by_xpath('//*[@id="mosaic-provider-jobcards"]/a')
         for e in offers:
@@ -30,6 +32,7 @@ class Indeed:
     
     def export_to_txt(self):
         """
+        Function to export the offers to a txt file.
         """
         with open('indeed.txt', 'w') as file:
             for offer in self.offers:
@@ -38,6 +41,12 @@ class Indeed:
 
     def scrap(self, iterator:int = 0):
         """
+        Function to scrap the offers.
+
+        Parameters
+        ----------
+        iterator: int
+            Iterator used to access the page before scraping.
         """
 
         while True:
