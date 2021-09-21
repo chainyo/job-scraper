@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "job-scraper"
+version = "0.1.0"
+description = "Scraper for job finding"
+authors = ["ChainYo <thomas.chaigneau@isen-ouest.yncrea.fr>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+selenium = "^3.141.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
