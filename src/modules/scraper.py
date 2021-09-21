@@ -36,24 +36,18 @@ class Indeed:
                 file.write(offer.link + '\n')
 
 
-    def scrap(self):
+    def scrap(self, iterator:int = 0):
         """
         """
-        i = 0
-        while True:
-            self.url = f'https://fr.indeed.com/emplois?q={self.job}&l={self.location}&start={i}'
 
-            self.access_page(self.url)
+        while True:
+            self.access_page(f'https://fr.indeed.com/emplois?q={self.job}&l={self.location}&start={iterator}')
             try: 
                 self.driver.find_element_by_xpath('//*[@id="mosaic-provider-jobcards"]/a')
-                print('I', i)
-                i += 10
-            except: continue
-            self.save_offers()
-            
-            print('LEN', len(self.offers))
-
-            if len(self.offers) > 150: 
-                self.export_to_txt()
-                break
-            
+                length = len(self.offers)
+                self.save_offers()
+                if length == len(self.offers):
+                    break
+                iterator += 10
+            except: pass
+        self.export_to_txt()
