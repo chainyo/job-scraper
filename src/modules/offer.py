@@ -24,10 +24,10 @@ class Offer:
         title:str, 
         company:str, 
         location:str, 
-        metadata:str, 
-        description:str,
-        profile:str,
-        skills:str):
+        metadata:str=None, 
+        description:str=None,
+        profile:str=None,
+        skills:str=None):
         """
         Function to store each offer's infos.
 

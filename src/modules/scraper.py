@@ -50,10 +50,12 @@ class Indeed:
                     except: infos['title'] = None
                     try: infos['company'] = self.driver.find_element_by_class_name('jobsearch-InlineCompanyRating').text.split('\n')[0]
                     except: infos['company'] = None
-                    
+                    try: infos['location'] = self.driver.find_element_by_class_name('jobsearch-JobInfoHeader-subtitle').find_element_by_xpath('.//div[2]').text
+                    except: infos['location'] = None
+                    try: infos['type'] = self.driver.find_element_by_class_name('jobsearch-JobMetadataHeader-item').text
+                    except: infos['type'] = None
                     print(offer.link)
-                    print(infos['title'])
-                    print(infos['company'])
+                    print(infos)
                     time.sleep(0.2)
                     break
                 except: pass

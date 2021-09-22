@@ -1,4 +1,5 @@
 import streamlit as st
+from modules.offer import Offer
 
 # Main layout
 st.set_page_config(
