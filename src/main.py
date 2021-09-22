@@ -1,6 +1,6 @@
 from selenium import webdriver
 
-from modules.scraper import Indeed
+from src.modules.scraper import Indeed
 
 try:
     grid_url = "http://127.0.0.1:4444/wd/hub"
