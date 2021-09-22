@@ -2,7 +2,7 @@ import time
 
 from selenium import webdriver
 
-from modules.offer import Offer
+from src.modules.offer import Offer
 
 
 class Indeed:
